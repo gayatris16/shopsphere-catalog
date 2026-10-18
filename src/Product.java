@@ -14,7 +14,7 @@ public abstract class Product {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("name must not be blank");
         }
-        if(price == null || price.compareTo(BigDecimal.ZERO)== 0){
+        if(price == null || price.signum()<0){
             throw new IllegalArgumentException("Price should be Whole number");
         }
         this.sku = requireText(sku, "sku");

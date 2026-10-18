@@ -2,6 +2,8 @@ import java.math.BigDecimal;
 
 public class PhysicalProduct extends Product{
     private final double weightKg;
+    private static final BigDecimal BASE_SHIPPING= new BigDecimal("5.00");
+    private static final BigDecimal PER_KG= new BigDecimal("2.00");
     public PhysicalProduct(String sku, String name, BigDecimal price, double weightKg) {
         super(sku, name, price);
         this.weightKg=weightKg;
@@ -10,6 +12,6 @@ public class PhysicalProduct extends Product{
 
     @Override
     public BigDecimal shippingCost() {
-        return null;
+        return BASE_SHIPPING.add(PER_KG.multiply(BigDecimal.valueOf(weightKg)));
     }
 }
