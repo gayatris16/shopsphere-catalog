@@ -3,7 +3,7 @@ import java.util.Objects;
 
 // 'sealed' = only the listed subclasses may extend this. The compiler then knows
 // every possible product type, which enables safe, exhaustive switch statements.
-public abstract class Product {
+public abstract sealed class Product permits DigitalProduct, PhysicalProduct {
 
     // private + final: the identity can never change or be touched from outside (encapsulation)
     private final String sku;

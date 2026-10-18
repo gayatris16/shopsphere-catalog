@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class PhysicalProduct extends Product{
+public non-sealed class PhysicalProduct extends Product{
     private final double weightKg;
     private static final BigDecimal BASE_SHIPPING= new BigDecimal("5.00");
     private static final BigDecimal PER_KG= new BigDecimal("2.00");
